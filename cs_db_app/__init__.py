@@ -31,6 +31,10 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
+    from . import inventory
+    app.register_blueprint(inventory.bp)
+    app.add_url_rule('/', endpoint='list')
+
 
 
     # a simple page that says hello
